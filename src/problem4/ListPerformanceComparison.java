@@ -1,4 +1,4 @@
-package problem4;
+/*package problem4;
 
 import java.util.*;
 
@@ -79,5 +79,5 @@ public class ListPerformanceComparison {
         System.out.printf("%s - Random access (get): %.3f ms%n",
                 name, (end - start) / 1_000_000.0);
     }
-}
+}*/
 
