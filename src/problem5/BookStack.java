@@ -6,19 +6,27 @@ public class BookStack {
     private LinkedList<Book> stack;
 
     public BookStack() {
-
+         stack=new LinkedList<>();
     }
-
     public void push(Book book) {
-
+         stack.addFirst(book);
     }
 
     public Book pop() {
         // code here and don't to test if it's empty
+        if(!stack.isEmpty()){
+            return stack.removeFirst();
+        }
+        return null;
+
     }
 
     public Book peek() {
         // code here and don't to test if it's empty
+        if(!stack.isEmpty()){
+            return stack.getFirst();
+        }
+        return null;
     }
 
     public boolean isEmpty() {
@@ -27,7 +35,9 @@ public class BookStack {
 
     public void display() {
         System.out.println("Stack contents (top to bottom):");
-
+        for (Book b : stack) {
+            System.out.println("- " + b.toString());
+        }
     }
 }
 
