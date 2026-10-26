@@ -1,4 +1,4 @@
-/*package problem5;
+package problem5;
 
 import java.util.LinkedList;
 
@@ -29,5 +29,5 @@ public class BookStack {
         System.out.println("Stack contents (top to bottom):");
 
     }
-}*/
+}
 

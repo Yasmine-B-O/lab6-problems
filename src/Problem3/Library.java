@@ -6,7 +6,7 @@ public class Library {
     private ArrayList<Document> arr=new ArrayList<Document>();
 
     public Library(int Capacity){
-        this.capacity=capacity;
+        this.capacity=Capacity;
     }
 
     public void displayDocuments(){
@@ -14,12 +14,16 @@ public class Library {
              System.out.println(ele.toString());
         }
     }
+    public List<Document> getArr(){
+        return arr;
+    }
 
     public Boolean add(Document doc){
         if(!arr.contains(doc)){
             arr.add(doc);
+            return true;
         }
-        return !arr.contains(doc);
+        return false;
     }
 
     public Boolean delete(Document doc){
@@ -29,6 +33,12 @@ public class Library {
         return !arr.contains(doc);
     }
     public Document document(int numEnrg){
+        for (Document doc : arr) {
+            if (doc.getNumRec() == numEnrg) {
+                return doc;
+            }
+        }
+        return null;
 
     }
 

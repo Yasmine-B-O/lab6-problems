@@ -1,4 +1,4 @@
-/*package problem5;
+package problem5;
 
 public class Book {
     private String title;
@@ -27,5 +27,5 @@ public class Book {
     public String toString() {
         return String.format("%s by %s (%d)", title, author, year);
     }
-}*/
+}
 

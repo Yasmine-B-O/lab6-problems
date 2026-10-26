@@ -1,4 +1,4 @@
-/*package problem4;
+package problem4;
 
 import java.util.*;
 
@@ -17,8 +17,8 @@ public class ListPerformanceComparison {
 
         System.out.println("---- Populate both lists ----");
         for (int i = 0; i < SIZE; i++) {
-            //code here
-            //code here
+            arrayList.add(i);   // Remplit l'ArrayList
+            linkedList.add(i);  // Remplit la LinkedList
         }
 
         // 2️⃣ Random insertions and deletions
@@ -39,6 +39,12 @@ public class ListPerformanceComparison {
     private static void testRandomInsertDelete(List<Integer> list, String name) {
         Random random = new Random();
         long start = System.nanoTime();
+        for (int i = 0; i < OPERATIONS; i++) {
+            int index = random.nextInt(list.size());
+            list.add(index, i); // Insertion aléatoire
+            int removeIndex = random.nextInt(list.size());
+            list.remove(removeIndex);
+        }
 
         // insert your code here
 
@@ -53,12 +59,17 @@ public class ListPerformanceComparison {
         long start = System.nanoTime();
 
         // Insertions at beginning and end
-
-        // add your code here
+        for (int i = 0; i < OPERATIONS; i++) {
+            list.add(0, i);
+            list.add(list.size(), i);
+        }
 
         // Deletions at beginning and end
+        for (int i = 0; i < OPERATIONS; i++) {
+            list.remove(0);               // Suppression au début
+            list.remove(list.size() - 1); // Suppression à la fin
+        }
 
-        // add your code here
 
         long end = System.nanoTime();
         System.out.printf("%s - Sequential insert/delete (start/end): %.3f ms%n",
@@ -73,11 +84,14 @@ public class ListPerformanceComparison {
 
         long sum = 0;
         // sum of the all elements in the list
-       // insert your code here
+        for (int i = 0; i < OPERATIONS; i++) {
+            int index = random.nextInt(list.size());
+            sum += list.get(index); // Accès aléatoire
+        }
 
         long end = System.nanoTime();
         System.out.printf("%s - Random access (get): %.3f ms%n",
                 name, (end - start) / 1_000_000.0);
     }
-}*/
+}
 
